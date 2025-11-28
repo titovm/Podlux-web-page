@@ -200,6 +200,48 @@ export default function App() {
     };
   }, []);
 
+  // Update Media Session API whenever track info changes
+  useEffect(() => {
+    if ('mediaSession' in navigator && isPlaying) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: songTitle,
+        artist: songArtist,
+        album: 'Podgorica Lux',
+        artwork: [
+          { src: albumArt, sizes: '96x96', type: 'image/png' },
+          { src: albumArt, sizes: '128x128', type: 'image/png' },
+          { src: albumArt, sizes: '192x192', type: 'image/png' },
+          { src: albumArt, sizes: '256x256', type: 'image/png' },
+          { src: albumArt, sizes: '384x384', type: 'image/png' },
+          { src: albumArt, sizes: '512x512', type: 'image/png' },
+        ]
+      });
+
+      // Set up media session action handlers
+      navigator.mediaSession.setActionHandler('play', () => {
+        if (audioRef.current) {
+          audioRef.current.play();
+          setIsPlaying(true);
+        }
+      });
+
+      navigator.mediaSession.setActionHandler('pause', () => {
+        if (audioRef.current) {
+          audioRef.current.pause();
+          setIsPlaying(false);
+        }
+      });
+
+      navigator.mediaSession.setActionHandler('stop', () => {
+        if (audioRef.current) {
+          audioRef.current.pause();
+          audioRef.current.currentTime = 0;
+          setIsPlaying(false);
+        }
+      });
+    }
+  }, [songTitle, songArtist, albumArt, isPlaying]);
+
   const handlePlayClick = () => {
     if (!audioRef.current) {
       // Create audio element on first click
