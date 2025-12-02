@@ -152,12 +152,12 @@ function DesktopLayout({ onPlayClick, isPlaying, songTitle, songArtist, albumArt
         <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgBackground} />
       </div>
       
-      <div className="absolute font-black italic left-[48px] text-black text-nowrap top-[48px] whitespace-pre z-10" style={{ fontFamily: "'ABC Gravity Cyrillic Wide', sans-serif", fontSize: 'clamp(32px, 2.5vw, 64px)', lineHeight: '1' }}>
+      <div className="absolute font-black italic left-[48px] text-black text-nowrap top-[48px] whitespace-pre z-10" style={{ fontSize: 'clamp(32px, 2.5vw, 64px)', lineHeight: '1' }}>
         <p className="mb-0">Подгорица</p>
         <p>Люкс</p>
       </div>
       
-      <div className="absolute font-black italic left-[calc(50%+0.5px)] text-black text-center text-nowrap top-[48px] translate-x-[-50%] whitespace-pre z-10" style={{ fontFamily: "'ABC Gravity Cyrillic Wide', sans-serif", fontSize: 'clamp(32px, 2.5vw, 64px)', lineHeight: '1' }}>
+      <div className="absolute font-black italic left-[calc(50%+0.5px)] text-black text-center text-nowrap top-[48px] translate-x-[-50%] whitespace-pre z-10" style={{ fontSize: 'clamp(32px, 2.5vw, 64px)', lineHeight: '1' }}>
         <p className="mb-0">
           {songTitle}
         </p>

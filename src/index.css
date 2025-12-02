@@ -571,9 +571,9 @@
     text-align: center;
   }
 
-  .font-\[\'ABC_Gravity_Variable\'\,sans-serif\] {
+  /* .font-\[\'ABC_Gravity_Variable\'\,sans-serif\] {
     font-family: ABC Gravity Variable, sans-serif;
-  }
+  } */
 
   .font-black {
     --tw-font-weight: var(--font-weight-black);
