@@ -4,6 +4,73 @@ import svgPathsDesktop from "./imports/svg-4tfah38jxr";
 import imgBackground from "figma:asset/e392cae85ecf7586202140d22ccf666294c6d2fb.png";
 import imgCover from "figma:asset/e86360af3fbddf9c71549231151f94741fc89c80.png";
 
+// Noise overlay component
+function NoiseOverlay() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Set canvas size to window size
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Generate noise
+    const generateNoise = () => {
+      const imageData = ctx.createImageData(canvas.width, canvas.height);
+      const data = imageData.data;
+
+      // Create sparse white pixels (about 0.5% coverage for subtle effect)
+      for (let i = 0; i < data.length; i += 4) {
+        if (Math.random() < 0.005) {
+          // White pixel
+          data[i] = 255;     // R
+          data[i + 1] = 255; // G
+          data[i + 2] = 255; // B
+          data[i + 3] = 180; // A (semi-transparent)
+        } else {
+          // Transparent pixel
+          data[i + 3] = 0;
+        }
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+    };
+
+    // Animate noise at ~15fps to simulate low-res gif
+    const interval = setInterval(generateNoise, 66);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', resizeCanvas);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        pointerEvents: 'none',
+        zIndex: 9999,
+        mixBlendMode: 'screen'
+      }}
+    />
+  );
+}
+
 // AzuraCast Now Playing API interfaces
 interface NowPlayingSong {
   title: string;
@@ -263,6 +330,7 @@ export default function App() {
 
   return (
     <div className="size-full">
+      <NoiseOverlay />
       <MobileLayout 
         onPlayClick={handlePlayClick} 
         isPlaying={isPlaying}
