@@ -313,9 +313,14 @@ export default function App() {
     if (!audioRef.current) {
       // Create audio element on first click
       audioRef.current = new Audio();
-      // Use the stream URL from AzuraCast if available, otherwise use default
-      audioRef.current.src = streamUrl || 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
-      audioRef.current.load();
+      // Use the stream URL from AzuraCast
+      if (streamUrl) {
+        audioRef.current.src = streamUrl;
+        audioRef.current.load();
+      } else {
+        console.error('Stream URL not available yet');
+        return;
+      }
     }
 
     if (isPlaying) {
