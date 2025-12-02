@@ -10,8 +10,9 @@
 
 @font-face {
   font-family: 'ABC Gravity Cyrillic Wide';
-  src: url('../assets/ABC Gravity Cyrillic Wide Italic.woff2') format('woff2');
-  font-weight: normal;
+  src: url('../assets/fonts/ABCGravityCyrillic-WideItalic.woff2') format('woff2'),
+       url('../assets/fonts/ABCGravityCyrillic-WideItalic.woff') format('woff');
+  font-weight: 900;
   font-style: italic;
   font-display: swap;
 }

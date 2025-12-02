@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'ABC Gravity Cyrillic Wide';
+    src: url('ABCGravityCyrillic-WideItalic.woff2') format('woff2'),
+        url('ABCGravityCyrillic-WideItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
