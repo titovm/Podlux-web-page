@@ -10,6 +10,16 @@
   }
 }
 
+@font-face {
+  font-family: 'ABC Gravity Cyrillic Wide';
+  src: url('/src/assets/fonts/ABCGravityCyrillic-WideItalic.woff2') format('woff2'),
+       url('/src/assets/fonts/ABCGravityCyrillic-WideItalic.woff') format('woff'),
+       url('/src/assets/fonts/ABCGravityCyrillic-WideItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 @layer theme {
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -341,6 +351,10 @@
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
   }
+}
+
+.title p {
+  font-family: 'ABC Gravity Cyrillic Wide', sans-serif;
 }
 
 @layer utilities {

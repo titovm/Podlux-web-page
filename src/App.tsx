@@ -101,7 +101,7 @@ function MobileLayout({ onPlayClick, isPlaying, songTitle, songArtist, albumArt 
     <div className="mobile-layout" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', padding: '2rem 1.5rem' }}>
       {/* Logo/Title - Top */}
       <div style={{ flexShrink: 0, width: '100%' }}>
-        <div className="font-black italic text-black text-center" style={{ fontFamily: "'ABC Gravity Cyrillic Wide', sans-serif", fontSize: 'clamp(32px, 10vw, 56px)', lineHeight: '0.9' }}>
+        <div className="font-black italic text-black text-center title" style={{ fontSize: 'clamp(32px, 10vw, 56px)', lineHeight: '0.9' }}>
           <p className="mb-0">Podgorica</p>
           <p>Lux</p>
         </div>
@@ -134,7 +134,7 @@ function MobileLayout({ onPlayClick, isPlaying, songTitle, songArtist, albumArt 
 
       {/* Song Info - Bottom box */}
       <div style={{ flexShrink: 0, width: '100%', maxWidth: '100%' }}>
-        <div className="font-black italic text-black text-center" style={{ fontFamily: "'ABC Gravity Cyrillic Wide', sans-serif", fontSize: 'clamp(24px, 8vw, 56px)', lineHeight: '0.95', padding: '0 1rem', wordWrap: 'break-word', overflowWrap: 'break-word' }}>
+        <div className="font-black italic text-black text-center title" style={{ fontSize: 'clamp(24px, 8vw, 56px)', lineHeight: '0.95', padding: '0 1rem', wordWrap: 'break-word', overflowWrap: 'break-word' }}>
           <p style={{ marginBottom: '0.25rem', wordWrap: 'break-word', overflowWrap: 'break-word' }}>
             {songTitle}
           </p>
@@ -152,12 +152,12 @@ function DesktopLayout({ onPlayClick, isPlaying, songTitle, songArtist, albumArt
         <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgBackground} />
       </div>
       
-      <div className="absolute font-black italic left-[48px] text-black text-nowrap top-[48px] whitespace-pre z-10" style={{ fontSize: 'clamp(32px, 2.5vw, 64px)', lineHeight: '1' }}>
+      <div className="absolute font-black italic left-[48px] text-black text-nowrap top-[48px] whitespace-pre z-10 title" style={{ fontSize: 'clamp(32px, 2.5vw, 64px)', lineHeight: '1' }}>
         <p className="mb-0">Подгорица</p>
         <p>Люкс</p>
       </div>
       
-      <div className="absolute font-black italic left-[calc(50%+0.5px)] text-black text-center text-nowrap top-[48px] translate-x-[-50%] whitespace-pre z-10" style={{ fontSize: 'clamp(32px, 2.5vw, 64px)', lineHeight: '1' }}>
+      <div className="absolute font-black italic left-[calc(50%+0.5px)] text-black text-center text-nowrap top-[48px] translate-x-[-50%] whitespace-pre z-10 title" style={{ fontSize: 'clamp(32px, 2.5vw, 64px)', lineHeight: '1' }}>
         <p className="mb-0">
           {songTitle}
         </p>
