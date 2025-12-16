@@ -71,6 +71,15 @@ function NoiseOverlay() {
   );
 }
 
+// Copyright component
+function Copyright({ className, style }: { className?: string; style?: React.CSSProperties }) {
+  return (
+    <div className={className} style={style}>
+      © {new Date().getFullYear()} By Madamme Zizu and Bio C<br/><a href="mailto:podlux@proton.me">Contact</a>
+    </div>
+  );
+}
+
 // AzuraCast Now Playing API interfaces
 interface NowPlayingSong {
   title: string;
@@ -140,6 +149,7 @@ function MobileLayout({ onPlayClick, isPlaying, songTitle, songArtist, albumArt 
           </p>
           <p style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{songArtist}</p>
         </div>
+        <Copyright className="text-black text-center" style={{ fontSize: '12px', marginTop: '1rem', opacity: 0.6 }} />
       </div>
     </div>
   );
@@ -195,6 +205,11 @@ function DesktopLayout({ onPlayClick, isPlaying, songTitle, songArtist, albumArt
           </div>
         </button>
       </div>
+      
+      <Copyright 
+        className="absolute text-black z-10" 
+        style={{ fontSize: '14px', textAlign: 'right', opacity: 0.9, bottom: '24px', right: '48px', backgroundColor: 'white', padding: '4px 8px', borderRadius: '2px' }} 
+      />
     </div>
   );
 }
