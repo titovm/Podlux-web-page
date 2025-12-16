@@ -178,10 +178,10 @@ function DesktopLayout({ onPlayClick, isPlaying, songTitle, songArtist, albumArt
         <img alt="Album Art" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={albumArt} />
       </div>
       
-      <div className="absolute right-[116px] top-[48px] z-10">
+      <div className="absolute top-[48px] z-10" style={{ right: '124px' }}>
         <button 
           onClick={onPlayClick}
-          className="bg-black box-border content-stretch flex gap-[10px] items-center justify-center pl-[24px] pr-[18px] py-[18px] rounded-[34px] size-[68px] cursor-pointer text-center"
+          className="bg-black box-border content-stretch flex gap-[10px] items-center justify-center p-[18px] rounded-[34px] size-[68px] cursor-pointer text-center"
           aria-label="Play/Pause"
         >
           <div className="flex h-[calc(1px*((var(--transform-inner-width)*1)+(var(--transform-inner-height)*0)))] items-center justify-center relative shrink-0 w-[calc(1px*((var(--transform-inner-height)*1)+(var(--transform-inner-width)*0)))]" style={{ "--transform-inner-width": "32.15625", "--transform-inner-height": "27.84375" } as React.CSSProperties}>
@@ -194,7 +194,7 @@ function DesktopLayout({ onPlayClick, isPlaying, songTitle, songArtist, albumArt
                 </div>
               </div>
             ) : (
-              <div className="flex-none rotate-[90deg]">
+              <div className="flex-none rotate-[90deg]" style={{ marginLeft: '2px' }}>
                 <div className="h-[27.854px] relative w-[32.163px]">
                   <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 33 28">
                     <path d={svgPathsDesktop.p7331f80} fill="var(--fill-0, white)" />
