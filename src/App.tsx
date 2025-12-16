@@ -167,11 +167,11 @@ function DesktopLayout({ onPlayClick, isPlaying, songTitle, songArtist, albumArt
         <p>Люкс</p>
       </div>
       
-      <div className="absolute font-black italic left-[calc(50%+0.5px)] text-black text-center text-nowrap top-[48px] translate-x-[-50%] whitespace-pre z-10 title" style={{ fontSize: 'clamp(32px, 2.5vw, 64px)', lineHeight: '1' }}>
-        <p className="mb-0">
+      <div className="absolute font-black italic left-[calc(50%+0.5px)] text-black text-center top-[48px] translate-x-[-50%] z-10 title" style={{ fontSize: 'clamp(32px, 2.5vw, 64px)', lineHeight: '1.1', maxWidth: 'calc(50% - 200px)', wordWrap: 'break-word', overflowWrap: 'break-word' }}>
+        <p className="mb-0" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
           {songTitle}
         </p>
-        <p>{songArtist}</p>
+        <p style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{songArtist}</p>
       </div>
       
       <div className="absolute right-[48px] size-[68px] top-[48px] z-10">
